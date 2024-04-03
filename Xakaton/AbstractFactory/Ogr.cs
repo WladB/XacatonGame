@@ -12,9 +12,9 @@ namespace Xakaton
     {
         public override void start()
         {
-            picture = new PictureBox();
-            picture.Image = ((Image)Properties.Resources.ResourceManager.GetObject("OffRoad1"));
-            picture.SizeMode = PictureBoxSizeMode.AutoSize;
+           // picture = new PictureBox();
+            picture= new Decor((Image)Properties.Resources.ResourceManager.GetObject("Ogr1"), new Point(459, 37), new Size(139, 176)).GetPictureBox();
+            //picture.SizeMode = PictureBoxSizeMode.AutoSize;
             speed = 1;
       
             attackStrategy = new OgrStrategy();

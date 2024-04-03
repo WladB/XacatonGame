@@ -16,10 +16,9 @@ namespace Xakaton
         //public double speed;
         public override void start()
         {
-            searchItem = new PictureBox();
-            searchItem.Image = ((Image)Properties.Resources.ResourceManager.GetObject("OffRoad1"));
-            Сase = new PictureBox();
-            Сase.Image = ((Image)Properties.Resources.ResourceManager.GetObject("OffRoad1"));
+            searchItem = new Decor((Image)Properties.Resources.ResourceManager.GetObject("Pen"), new Point(180, 59), new Size(30, 30)).GetPictureBox();
+           // searchItem.Image = ((Image)Properties.Resources.ResourceManager.GetObject("Pen"));
+            Сase = new Decor((Image)Properties.Resources.ResourceManager.GetObject("msg608701733_164862_removebg_preview"), new Point(660, 569), new Size(73, 79)).GetPictureBox();
 
             task = "Поклади цей предмет на платформу";
         }

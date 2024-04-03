@@ -13,10 +13,8 @@ namespace Xakaton
     public partial class Form1 : Form
     {
         private Maze maze;
-        private Point playerCords;
-        private Image wall;
-        private Image passage;
-        private Image Player;
+        MazeImages images;
+        Image mazeImage;
         public Form1()
         {
             InitializeComponent();
@@ -24,59 +22,63 @@ namespace Xakaton
             maze = generator.generate();
 
 
+            images = new MazeImages();
             Graphics g;
 
-            wall = new Bitmap(20, 20);
-            g = Graphics.FromImage(wall);
+            images.wall = new Bitmap(20, 20);
+            g = Graphics.FromImage(images.wall);
             g.Clear(Color.Black);
 
-            passage = new Bitmap(20, 20);
-            g = Graphics.FromImage(passage);
+            images.passage = new Bitmap(20, 20);
+            g = Graphics.FromImage(images.passage);
             g.Clear(Color.White);
 
-            wall = new Bitmap(20, 20);
-            g = Graphics.FromImage(wall);
+            MazeSprite player = new MazeSprite();
+            player.image = new Bitmap(20, 20);
+            g = Graphics.FromImage(player.image);
             g.Clear(Color.Red);
+            player.name = "player";
+
+            for (int i = maze.mazeTiles.GetLength(0) - 1; i >= 0 ; i--)
+            {
+                for (int j = maze.mazeTiles.GetLength(1) - 1; j >= 0 ; j--)
+                {
+                    if (!maze.mazeTiles[i,j].isOcupied)
+                    {
+                        player.point = new Point(i, j);
+                    }
+                }
+            }
+
+            images.sprites.Add(player);
+
+            mazeImage = maze.drawFragment(new Rectangle(player.point.X - 10, player.point.Y - 10, 20, 20), images, 20);
+            //mazeImage = maze.drawFragment(new Rectangle(0, 0, maze.mazeTiles.GetLength(0), maze.mazeTiles.GetLength(1)), images, 20);
+
         }
 
-        private Image DrawMazeFragment(Maze maze, Point upperLeft, Point bottomRight, int cellSize)
+        private void RePaint()
         {
-            Image resizedWall = new Bitmap(wall, new Size(cellSize, cellSize));
-
-            Image result = new Bitmap((bottomRight.X - upperLeft.X + 1) * cellSize, (bottomRight.Y - upperLeft.Y + 1) * cellSize);
-            Graphics g = Graphics.FromImage(result);
-            if(upperLeft.X < 0)
-            {
-                for (int i = 0; i < Math.Abs(upperLeft.X); i++)
-                {
-                    for (int j = upperLeft.Y; j <= bottomRight.Y; j++)
-                    {
-                        g.DrawImage(resizedWall, i * cellSize, j * cellSize);
-                    }
-                }
-            }
-
-            if (upperLeft.Y < 0)
-            {
-                for (int i = 0; i < Math.Abs(upperLeft.Y); i++)
-                {
-                    for (int j = upperLeft.X; j <= bottomRight.X; j++)
-                    {
-                        g.DrawImage(resizedWall, j * cellSize, j * cellSize);
-                    }
-                }
-            }
-
-            if (bottomRight.X > maze.mazeTiles.GetLength(0))
-            {
-
-            }
-            return result;
+            Graphics g = this.CreateGraphics();
+            g.Clear(Color.White);
+            g.DrawImage(mazeImage, (Width - mazeImage.Width) / 2, (Height - mazeImage.Height) / 2);
         }
 
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AbstractFactory factory = new Room1();
+            factory.play();
+        }
 
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            RePaint();
+        }
 
-       
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            RePaint();
+        }
     }
 }

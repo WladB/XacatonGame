@@ -66,8 +66,8 @@ namespace Xakaton
         private Point toImageCords(Point p, Rectangle area, int cellSize)
         {
             Point result = new Point();
-            result.X = (p.X - area.X)*cellSize;
-            result.Y = (p.Y - area.Y)*cellSize;
+            result.X = (p.X - area.Left)*cellSize;
+            result.Y = (p.Y - area.Top)*cellSize;
             return result;
         }
 
@@ -86,7 +86,7 @@ namespace Xakaton
             {
                 for (int i = area.Left; i < 0; i++)
                 {
-                    for (int j = area.Top; j < area.Bottom; j++)
+                    for (int j = area.Top; j <= area.Bottom; j++)
                     {
                         g.DrawImage(images.wall, toImageCords(new Point(i,j), area, cellSize));
                     }
@@ -95,7 +95,7 @@ namespace Xakaton
 
             if (area.Top < 0)
             {
-                for (int i = area.Left; i < area.Right; i++)
+                for (int i = area.Left; i <= area.Right; i++)
                 {
                     for (int j = area.Top; j < 0; j++)
                     {
@@ -108,7 +108,7 @@ namespace Xakaton
             {
                 for (int i = mazeTiles.GetLength(0); i < area.Right + 1; i++)
                 {
-                    for (int j = area.Top; j < area.Bottom; j++)
+                    for (int j = area.Top; j <= area.Bottom; j++)
                     {
                         g.DrawImage(images.wall, toImageCords(new Point(i,j), area, cellSize));
                     }
@@ -117,7 +117,7 @@ namespace Xakaton
 
             if (area.Bottom >= mazeTiles.GetLength(1))
             {
-                for (int i = area.Left; i < area.Right; i++)
+                for (int i = area.Left; i <= area.Right; i++)
                 {
                     for (int j = mazeTiles.GetLength(1); j < area.Bottom + 1; j++)
                     {

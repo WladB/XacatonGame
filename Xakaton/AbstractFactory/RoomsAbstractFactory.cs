@@ -39,6 +39,7 @@ namespace Xakaton
     public abstract class RoomsDecor
     {
         public List<object> listDecor; //list декорацій для кімнати 
+        public PictureBox bkGround;
         abstract public void start();
         abstract public void show(Form form);
     }

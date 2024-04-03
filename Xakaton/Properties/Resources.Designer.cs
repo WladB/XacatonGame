@@ -73,6 +73,26 @@ namespace Xakaton.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bomb {
+            get {
+                object obj = ResourceManager.GetObject("bomb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Goblin1 {
+            get {
+                object obj = ResourceManager.GetObject("Goblin1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Grass {
             get {
                 object obj = ResourceManager.GetObject("Grass", resourceCulture);
@@ -173,6 +193,16 @@ namespace Xakaton.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap player {
+            get {
+                object obj = ResourceManager.GetObject("player", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Tree1 {
             get {
                 object obj = ResourceManager.GetObject("Tree1", resourceCulture);
@@ -186,6 +216,16 @@ namespace Xakaton.Properties {
         internal static System.Drawing.Bitmap Tree2 {
             get {
                 object obj = ResourceManager.GetObject("Tree2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Vibuh {
+            get {
+                object obj = ResourceManager.GetObject("Vibuh", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

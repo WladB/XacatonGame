@@ -118,43 +118,55 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Bochka" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Bochka.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Kamin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Kamin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Tree1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Tree1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Kamen3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Kamen3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Grass" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Grass.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Kamen2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Kamen2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="photo1712156693" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\photo1712156693.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Pen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Ogr3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Ogr3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Bochka" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bochka.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Ogr2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Ogr2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Tree2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Tree2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Ogr3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ogr3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Grass" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Grass.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Ogr1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Ogr1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Kamen2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Kamen2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tree2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tree2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tree1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tree1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="msg608701733-164862-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\msg608701733-164862-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Kamen3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Kamen3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bomb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bomb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="photo1712156693" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\photo1712156693.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Kamin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Kamin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Vibuh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Vibuh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="player" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\player.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Goblin1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Goblin1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

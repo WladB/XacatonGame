@@ -12,9 +12,8 @@ namespace Xakaton
     {
         public override void start()
         {
-            picture = new PictureBox();
-            picture.Image = ((Image)Properties.Resources.ResourceManager.GetObject("OffRoad1"));
-            picture.SizeMode = PictureBoxSizeMode.AutoSize;
+            picture = new Decor((Image)Properties.Resources.ResourceManager.GetObject("Goblin1"), new Point(83, 320), new Size(105, 117)).GetPictureBox(); ;
+            
             speed = 5;
 
             attackStrategy = new GoblinStrategy();
@@ -52,9 +51,8 @@ namespace Xakaton
     {
         public override void start()
         {
-            picture = new PictureBox();
-            picture.Image = ((Image)Properties.Resources.ResourceManager.GetObject("OffRoad1"));
-            picture.SizeMode = PictureBoxSizeMode.AutoSize;
+            picture = new Decor((Image)Properties.Resources.ResourceManager.GetObject("Goblin1"), new Point(83, 320), new Size(105, 117)).GetPictureBox();
+            //picture.SizeMode = PictureBoxSizeMode.AutoSize;
             speed = 4;
 
             attackStrategy = new GoblinStrategy();

@@ -12,9 +12,8 @@ namespace Xakaton
     {
         public override void start()
         {
-            picture = new PictureBox();
-            picture.Image = ((Image)Properties.Resources.ResourceManager.GetObject("OffRoad1"));
-            picture.SizeMode = PictureBoxSizeMode.AutoSize;
+            picture = new Decor((Image)Properties.Resources.ResourceManager.GetObject("bomb"), new Point(1017, 350), new Size(48, 61)).GetPictureBox(); ;
+            //picture.SizeMode = PictureBoxSizeMode.AutoSize;
             speed = 7;
 
             attackStrategy = new BombStrategy();
