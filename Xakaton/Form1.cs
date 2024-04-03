@@ -39,9 +39,9 @@ namespace Xakaton
             g.Clear(Color.Red);
             player.name = "player";
 
-            for (int i = maze.mazeTiles.GetLength(0) - 1; i >= 0 ; i--)
+            for (int i = 0; i < maze.mazeTiles.GetLength(0); i++)
             {
-                for (int j = maze.mazeTiles.GetLength(1) - 1; j >= 0 ; j--)
+                for (int j = 0; j < maze.mazeTiles.GetLength(1) ; j++)
                 {
                     if (!maze.mazeTiles[i,j].isOcupied)
                     {
@@ -59,6 +59,8 @@ namespace Xakaton
 
         private void RePaint()
         {
+            Point player = images.getByName("player").point;
+            mazeImage = maze.drawFragment(new Rectangle(player.X - 10, player.Y - 10, 20, 20), images, 20);
             Graphics g = this.CreateGraphics();
             g.Clear(Color.White);
             g.DrawImage(mazeImage, (Width - mazeImage.Width) / 2, (Height - mazeImage.Height) / 2);
@@ -78,6 +80,45 @@ namespace Xakaton
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
+            RePaint();
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            Point curPoint = images.getByName("player").point;
+            switch (e.KeyCode)
+            {
+                case Keys.D:
+                    if (curPoint.X < maze.mazeTiles.GetLength(0) - 2 && 
+                        !maze.mazeTiles[curPoint.X + 1, curPoint.Y].isOcupied)
+                    {
+                        images.getByName("player").point.X++;
+                    } 
+                    break;
+                case Keys.A:
+                    if (curPoint.X > 0 &&
+                        !maze.mazeTiles[curPoint.X - 1, curPoint.Y].isOcupied)
+                    {
+                        images.getByName("player").point.X--;
+                    }
+                    break;
+                case Keys.S:
+                    if (curPoint.Y < maze.mazeTiles.GetLength(1) - 2 &&
+                        !maze.mazeTiles[curPoint.X, curPoint.Y + 1].isOcupied)
+                    {
+                        images.getByName("player").point.Y++;
+                    }
+                    break;
+                case Keys.W:
+                    if (curPoint.Y > 0 &&
+                        !maze.mazeTiles[curPoint.X, curPoint.Y - 1].isOcupied)
+                    {
+                        images.getByName("player").point.Y--;
+                    }
+                    break;
+                default:
+                    break;
+            }
             RePaint();
         }
     }
