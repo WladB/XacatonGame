@@ -22,6 +22,7 @@ namespace Xakaton
             {
                 for (int j = 0; j < 50; j++)
                 {
+                    mazeTiles[i,j] = new MazeTile();
                     mazeTiles[i,j].x = i;
                     mazeTiles[i,j].y = j;
                 }
