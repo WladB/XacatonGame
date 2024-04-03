@@ -30,39 +30,51 @@ namespace Xakaton
         {
             return new DecorRoom1();
         }
-        public override void play()
+        public override bool play()
         {
            
             Form form1 = new Form();
+            form1.KeyPreview = true;
             PictureBox picturePlayer = new Decor((Image)Properties.Resources.ResourceManager.GetObject("player"), new Point(504, 283), new Size(60, 94)).GetPictureBox();
             Player player = new Player(picturePlayer);
             ProgressBar prBar = new ProgressBar();
             prBar.Size = new Size(341, 17);
-            prBar.Location = new Point(341, 17);
+            prBar.Location = new Point(741, 17);
             // new Point(X, Y);
             int X = picturePlayer.Location.X;
             int Y = picturePlayer.Location.Y;
+            Timer timer = new Timer();
             void timer1_Tick(object sender, EventArgs e)
             {
-                player.move(new Point(X, Y));
-                player.Attack(form1);
-                prBar.Value = player.health;
+                if (player.health != 0)
+                {
+                    player.move(new Point(X, Y));
+                    player.Attack(form1);
+                    prBar.Value = player.health;
+                }
+                else {
+                    timer.Enabled = false;
+                    MessageBox.Show("Ви не впорались");
+                    form1.DialogResult= DialogResult.No;
+
+                }
+                
             }
              void Form1_MouseMove(object sender, MouseEventArgs e)
             {
                 X = e.X - picturePlayer.Width / 2;
                 Y = e.Y - picturePlayer.Height / 2;
             }
-            /*  void Form1_KeyDown(object sender, KeyEventArgs e)
+              void Form1_KeyDown(object sender, KeyEventArgs e)
               {
                   switch(e.KeyCode) {
-                      case Keys.W: Y--;  break;
-                      case Keys.A: X--;  break;
-                      case Keys.D: X++;  break;
-                      case Keys.S: Y++;  break;
+                      case Keys.W: Y -= player.speed;  break;
+                      case Keys.A: X-= player.speed;  break;
+                      case Keys.D: X+= player.speed;  break;
+                      case Keys.S: Y+= player.speed;  break;
                   }
-              }*/
-            Timer timer = new Timer();
+              }
+           
             timer.Tick += timer1_Tick;
             
             prBar.Minimum = 0;
@@ -74,7 +86,7 @@ namespace Xakaton
             form1.Height = 720;
             form1.Controls.Add(picturePlayer);
             form1.Controls.Add(prBar);
-            form1.MouseMove += Form1_MouseMove;
+            form1.KeyDown += Form1_KeyDown;
             ogr = CreateEnemyOgr();
             goblin = CreateEnemyGoblin();
             bomb = CreateEnemyBomb();
@@ -95,7 +107,7 @@ namespace Xakaton
             decor.show(form1);
             bomb.show(form1);
             timer.Enabled = true;
-            form1.Show();
+            return form1.ShowDialog() == DialogResult.OK;
 
         }
     }

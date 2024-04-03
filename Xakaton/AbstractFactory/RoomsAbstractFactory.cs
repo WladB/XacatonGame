@@ -55,7 +55,7 @@ namespace Xakaton
         abstract public AbstractEnemy CreateEnemyBomb();
         abstract public AbstractRoomLogic CreateRoomLogic();
         abstract public RoomsDecor CreateDecor();
-        abstract public void play();
+        abstract public bool play();
     }
 
 }

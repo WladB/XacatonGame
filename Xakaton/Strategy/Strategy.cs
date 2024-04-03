@@ -51,7 +51,7 @@ namespace Xakaton
                     j++;
                 }
                 player.enemies.Remove(bomb);
-                player.health -= 25;
+                player.health -= 20;
                 bomb.picture.Location = new Point(0, 0);
                 bomb.picture = null;
                 bomb = null;
@@ -60,13 +60,13 @@ namespace Xakaton
     }
     public class GoblinStrategy: AttackStrategy
     {
-        public void Attack(Player player, AbstractEnemy ghost, Form f)
+        public void Attack(Player player, AbstractEnemy goblin, Form f)
         {
-            int ghost_X = ghost.picture.Location.X;
-            int ghost_Y = ghost.picture.Location.Y;
+            int goblin_X = goblin.picture.Location.X;
+            int goblin_Y = goblin.picture.Location.Y;
             int player_X = player.picture.Location.X;
             int player_Y = player.picture.Location.Y;
-            if (Math.Sqrt(((ghost_X - player_X) * (ghost_X - player_X)) + ((ghost_Y - player_Y) * (ghost_Y - player_Y))) <= 20 && player.health >= 10)
+            if (Math.Sqrt(((goblin_X - player_X) * (goblin_X - player_X)) + ((goblin_Y - player_Y) * (goblin_Y - player_Y))) <= 30 && player.health >= 10)
             {
                 player.health -= 10;
             }
@@ -80,7 +80,7 @@ namespace Xakaton
             int striker_Y = striker.picture.Location.Y;
             int player_X = player.picture.Location.X;
             int player_Y = player.picture.Location.Y;
-            if (Math.Sqrt(((striker_X - player_X) * (striker_X - player_X)) + ((striker_Y - player_Y) * (striker_Y - player_Y))) <= 40 && player.health >= 35)
+            if (Math.Sqrt(((striker_X - player_X) * (striker_X - player_X)) + ((striker_Y - player_Y) * (striker_Y - player_Y))) <= 60 && player.health >= 35)
             {
                 player.health -= 35;
             }
