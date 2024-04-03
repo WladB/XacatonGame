@@ -17,7 +17,7 @@ namespace Xakaton
     {
         int j = 0;
 
-        public void Attack(Player player, AbstractEnemy bomb, Form1 f)
+        public void Attack(Player player, AbstractEnemy bomb, Form f)
         {
             int bomb_X = bomb.picture.Location.X;
             int bomb_Y = bomb.picture.Location.Y;
@@ -60,7 +60,7 @@ namespace Xakaton
     }
     public class GoblinStrategy: AttackStrategy
     {
-        public void Attack(Player player, AbstractEnemy ghost, Form1 f)
+        public void Attack(Player player, AbstractEnemy ghost, Form f)
         {
             int ghost_X = ghost.picture.Location.X;
             int ghost_Y = ghost.picture.Location.Y;
@@ -74,7 +74,7 @@ namespace Xakaton
     }
     public class OgrStrategy : AttackStrategy
     {
-        public void Attack(Player player, AbstractEnemy striker, Form1 f)
+        public void Attack(Player player, AbstractEnemy striker, Form f)
         {
             int striker_X = striker.picture.Location.X;
             int striker_Y = striker.picture.Location.Y;

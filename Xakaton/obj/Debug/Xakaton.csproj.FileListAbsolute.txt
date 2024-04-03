@@ -1,0 +1,10 @@
+C:\Users\User\source\repos\Xakaton\Xakaton\bin\Debug\Xakaton.exe.config
+C:\Users\User\source\repos\Xakaton\Xakaton\bin\Debug\Xakaton.exe
+C:\Users\User\source\repos\Xakaton\Xakaton\bin\Debug\Xakaton.pdb
+C:\Users\User\source\repos\Xakaton\Xakaton\obj\Debug\Xakaton.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\Xakaton\Xakaton\obj\Debug\Xakaton.Form1.resources
+C:\Users\User\source\repos\Xakaton\Xakaton\obj\Debug\Xakaton.Properties.Resources.resources
+C:\Users\User\source\repos\Xakaton\Xakaton\obj\Debug\Xakaton.csproj.GenerateResource.cache
+C:\Users\User\source\repos\Xakaton\Xakaton\obj\Debug\Xakaton.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Xakaton\Xakaton\obj\Debug\Xakaton.exe
+C:\Users\User\source\repos\Xakaton\Xakaton\obj\Debug\Xakaton.pdb

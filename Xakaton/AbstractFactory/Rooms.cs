@@ -32,6 +32,8 @@ namespace Xakaton
         }
         public override void play()
         {
+            int X = 0;
+            int Y = 0;
             Form form1 = new Form();
             PictureBox picturePlayer = new PictureBox();
             Player player = new Player(picturePlayer);
@@ -42,14 +44,23 @@ namespace Xakaton
                 player.Attack(form1);
                 //progressBar1.Value = player.health;
             }
-            
+            void Form1_KeyDown(object sender, KeyEventArgs e)
+            {
+                switch(e.KeyCode) {
+                    case Keys.W: Y--;  break;
+                    case Keys.A: X--;  break;
+                    case Keys.D: X++;  break;
+                    case Keys.S: Y++;  break;
+                }
+            }
             Timer timer = new Timer();
             timer.Tick += timer1_Tick;
             form1.Text = "Room1 Level";
             form1.BackColor = Color.White;
-            form1.Width = 1000;
-            form1.Height = 500;
+            form1.Width = 1149;
+            form1.Height = 720;
             form1.Controls.Add(picturePlayer);
+            form1.KeyDown += Form1_KeyDown;
             ogr = CreateEnemyOgr();
             goblin = CreateEnemyGoblin();
             bomb = CreateEnemyBomb();

@@ -23,7 +23,7 @@ namespace Xakaton
         {
             form.Controls.Add(picture);
         }
-        public override void Attack(Form1 f, Player p = null, AbstractEnemy b = null)
+        public override void Attack(Form f, Player p = null, AbstractEnemy b = null)
         {
             attackStrategy.Attack(p, b, f);
         }
