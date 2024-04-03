@@ -100,6 +100,16 @@ namespace Xakaton
 
             MazeTile currentTile = maze.mazeTiles[x,y];
             generationIteration(currentTile);
+            for (int i = 0; i < maze.mazeTiles.GetLongLength(0); i++)
+            {
+                for (int j = 0; j < maze.mazeTiles.GetLength(1); j++)
+                {
+                    if (!maze.mazeTiles[i,j].isOcupied)
+                    {
+                        maze.freeTiles.Add(maze.mazeTiles[i, j]);
+                    }
+                }
+            }
             return maze;
         } 
     }

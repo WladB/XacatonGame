@@ -49,6 +49,7 @@ namespace Xakaton
     class Maze
     {
         public MazeTile[,] mazeTiles;
+        public List<MazeTile> freeTiles;
         public Maze()
         {
             mazeTiles = new MazeTile[50,50];
@@ -61,6 +62,7 @@ namespace Xakaton
                     mazeTiles[i,j].y = j;
                 }
             }
+            freeTiles = new List<MazeTile>();
         }  
 
         private Point toImageCords(Point p, Rectangle area, int cellSize)
