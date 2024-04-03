@@ -10,11 +10,30 @@ using System.Threading.Tasks;
 
 namespace Xakaton
 {
-    class MazeSprites
+
+    class MazeSprite
+    {
+        public Image image;
+        public Point point;
+        public string name;
+    }
+
+    class MazeImages
     {
         public Image wall;
         public Image passage;
-        public Image player;
+        public List<MazeSprite> sprites = new List<MazeSprite>();
+        public MazeSprite getByName(string name)
+        {
+            for (int i = 0; i < sprites.Count; i++)
+            {
+                if(sprites[i].name.Equals(name))
+                {
+                    return sprites[i];
+                }
+            }
+            return null;
+        }
     }
     class MazeTile
     {
@@ -52,11 +71,14 @@ namespace Xakaton
             return result;
         }
 
-        public Image drawFragment(Rectangle area, MazeSprites sprites, Point player, int cellSize)
+        public Image drawFragment(Rectangle area, MazeImages images, int cellSize)
         {
-            sprites.wall = new Bitmap(sprites.wall, new Size(cellSize, cellSize));
-            sprites.passage = new Bitmap(sprites.passage, new Size(cellSize, cellSize));
-            sprites.player = new Bitmap(sprites.player, new Size(cellSize, cellSize));
+            images.wall = new Bitmap(images.wall, new Size(cellSize, cellSize));
+            images.passage = new Bitmap(images.passage, new Size(cellSize, cellSize));
+            for (int i = 0; i < images.sprites.Count; i++)
+            {
+                images.sprites[i].image = new Bitmap(images.sprites[i].image, new Size(cellSize, cellSize)); 
+            }
 
             Image result = new Bitmap((area.Width + 1) * cellSize, (area.Height + 1) * cellSize);
             Graphics g = Graphics.FromImage(result);
@@ -66,7 +88,7 @@ namespace Xakaton
                 {
                     for (int j = area.Top; j < area.Bottom; j++)
                     {
-                        g.DrawImage(sprites.wall, toImageCords(new Point(i,j), area, cellSize));
+                        g.DrawImage(images.wall, toImageCords(new Point(i,j), area, cellSize));
                     }
                 }
             }
@@ -77,7 +99,7 @@ namespace Xakaton
                 {
                     for (int j = area.Top; j < 0; j++)
                     {
-                        g.DrawImage(sprites.wall, toImageCords(new Point(i,j), area, cellSize));
+                        g.DrawImage(images.wall, toImageCords(new Point(i,j), area, cellSize));
                     }
                 }
             }
@@ -88,7 +110,7 @@ namespace Xakaton
                 {
                     for (int j = area.Top; j < area.Bottom; j++)
                     {
-                        g.DrawImage(sprites.wall, toImageCords(new Point(i,j), area, cellSize));
+                        g.DrawImage(images.wall, toImageCords(new Point(i,j), area, cellSize));
                     }
                 }  
             }
@@ -99,7 +121,7 @@ namespace Xakaton
                 {
                     for (int j = mazeTiles.GetLength(1); j < area.Bottom + 1; j++)
                     {
-                        g.DrawImage(sprites.wall, toImageCords(new Point(i,j), area, cellSize));
+                        g.DrawImage(images.wall, toImageCords(new Point(i,j), area, cellSize));
                     }
                 }
             }
@@ -110,23 +132,29 @@ namespace Xakaton
                 {
                     if(i >=0 && j >= 0 && i < mazeTiles.GetLength(0) && j < mazeTiles.GetLength(1))
                     {
-                        if(player.X == i && player.Y == j)
+
+                        if(mazeTiles[i,j].isOcupied)
                         {
-                            g.DrawImage(sprites.player, toImageCords(new Point(i,j), area, cellSize));
-                        }  
+                            g.DrawImage(images.wall, toImageCords(new Point(i,j), area, cellSize));   
+                        }   
                         else
                         {
-                            if(mazeTiles[i,j].isOcupied)
-                            {
-                                g.DrawImage(sprites.wall, toImageCords(new Point(i,j), area, cellSize));   
-                            }   
-                            else
-                            {
-                                g.DrawImage(sprites.passage, toImageCords(new Point(i,j), area, cellSize));       
-                            }    
-                        }
+                            g.DrawImage(images.passage, toImageCords(new Point(i,j), area, cellSize));       
+                        }    
+                        
                     } 
                 }
+            }
+
+            for (int i = 0; i < images.sprites.Count; i++)
+            {
+                if( images.sprites[i].point.X >= area.Left && 
+                    images.sprites[i].point.X <= area.Right && 
+                    images.sprites[i].point.Y >= area.Top && 
+                    images.sprites[i].point.Y <= area.Bottom)
+                {
+                    g.DrawImage(images.sprites[i].image, toImageCords(images.sprites[i].point, area, cellSize));   
+                } 
             }
 
             
