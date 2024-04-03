@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Xakaton
 {
-    class MazeTile
+    public class MazeTile
     {
-        public bool isOcupied;
+        public bool isOcupied;//if tile is the wall
         public int x;
         public int y;
         public MazeTile()
@@ -21,7 +21,7 @@ namespace Xakaton
             x = y = 0;
         }
     }
-    class Maze
+    public class Maze
     {
         public MazeTile[,] mazeTiles;
         public Maze()
