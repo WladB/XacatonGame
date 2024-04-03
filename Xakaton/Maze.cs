@@ -1,3 +1,12 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Xakaton
 {
@@ -6,7 +15,7 @@ namespace Xakaton
         public bool isOcupied;
         public int x;
         public int y;
-        MazeTile()
+        public MazeTile()
         {
             isOcupied = true;
             x = y = 0;
